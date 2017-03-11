@@ -1,0 +1,9 @@
+{
+  "name": "kingpetrelli/rest-moodle",
+  "description": "PHP wrapper for RESTful consumption of Moodle APIs",
+  "keywords": ["moodle", "php", "rest", "api"],
+  "license": "MIT",
+  "require": {
+    "dcai/curl":"*"
+  }
+}
