@@ -34,8 +34,8 @@ class RestMoodle {
 		$params = ['users' => $users];
 
 		$mdlFunc = "core_user_create_users";
-		$restFormat = (self::$restFormat=="json") ? '&moodlewsrestformat=' . self::$restFormat : '';
-		$url = self::$mdlHost . '/webservice/rest/server.php?wstoken=' . self::$mdlToken . '&wsfunction=' . $mdlFunc . $restFormat;
+		$restFormat = ($this->format=="json") ? '&moodlewsrestformat=' . $this->format : '';
+		$url = $this->host . '/webservice/rest/server.php?wstoken=' . $this->token . '&wsfunction=' . $mdlFunc . $restFormat;
 
 		return $this->curl->post($url, $params);
 	}
@@ -45,8 +45,8 @@ class RestMoodle {
 		$params['userids'] = $userIDs;
 
 		$mdlFunc = "core_user_delete_users";
-		$restFormat = (self::$restFormat=="json") ? '&moodlewsrestformat=' . self::$restFormat : '';
-		$url = self::$mdlHost . '/webservice/rest/server.php?wstoken=' . self::$mdlToken . '&wsfunction=' . $mdlFunc . $restFormat;
+		$restFormat = ($this->format=="json") ? '&moodlewsrestformat=' . $this->format : '';
+		$url = $this->host . '/webservice/rest/server.php?wstoken=' . $this->token . '&wsfunction=' . $mdlFunc . $restFormat;
 
 		return $this->curl->post($url, $params);
 	}
@@ -65,8 +65,8 @@ class RestMoodle {
 		$params['values'][] = $value;
 
 		$mdlFunc = "core_user_get_users_by_field";
-		$restFormat = (self::$restFormat=="json") ? '&moodlewsrestformat=' . self::$restFormat : '';
-		$url = self::$mdlHost . '/webservice/rest/server.php?wstoken=' . self::$mdlToken . '&wsfunction=' . $mdlFunc . $restFormat;
+		$restFormat = ($this->format=="json") ? '&moodlewsrestformat=' . $this->format : '';
+		$url = $this->host . '/webservice/rest/server.php?wstoken=' . $this->token . '&wsfunction=' . $mdlFunc . $restFormat;
 
 		return $this->curl->get($url, $params);
 	}
@@ -83,8 +83,8 @@ class RestMoodle {
 		}
 
 		$mdlFunc = "enrol_manual_enrol_users";
-		$restFormat = (self::$restFormat=="json") ? '&moodlewsrestformat=' . self::$restFormat : '';
-		$url = self::$mdlHost . '/webservice/rest/server.php?wstoken=' . self::$mdlToken . '&wsfunction=' . $mdlFunc . $restFormat;
+		$restFormat = ($this->format=="json") ? '&moodlewsrestformat=' . $this->format : '';
+		$url = $this->host . '/webservice/rest/server.php?wstoken=' . $this->token . '&wsfunction=' . $mdlFunc . $restFormat;
 
 		return $this->curl->post($url, $params);
 	}
