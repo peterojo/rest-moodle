@@ -3,9 +3,9 @@
 use dcai\curl as Curl;
 
 class RestMoodle {
-  # set all your constants here or move them to a separate file if you please
-	protected $format;
+
 	protected $host;
+	protected $format;
 	protected $token;
 
 	protected $curl;
